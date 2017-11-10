@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:padding="15dp"
+    android:scrollbars="none"
+    tools:context="com.riverlet.scratchcard.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上下都是bitmap"
+            android:textColor="#4a4a4a"
+            android:textSize="12sp" />
+
+        <com.riverlet.scratchcard.ScratchCardView
+            android:id="@+id/scratch_card_01"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="15dp"
+            android:background="#eeeeee" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="上颜色,下文字"
+            android:textColor="#4a4a4a"
+            android:textSize="12sp" />
+
+        <com.riverlet.scratchcard.ScratchCardView
+            android:id="@+id/scratch_card_02"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="15dp"
+            android:background="#eeeeee" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="上颜色+文字，下颜色文字"
+            android:textColor="#4a4a4a"
+            android:textSize="12sp" />
+
+        <com.riverlet.scratchcard.ScratchCardView
+            android:id="@+id/scratch_card_03"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="15dp"
+            android:background="#eeeeee" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="上颜色，下颜色(但我不认为会有这种需求)"
+            android:textColor="#4a4a4a"
+            android:textSize="12sp" />
+
+        <com.riverlet.scratchcard.ScratchCardView
+            android:id="@+id/scratch_card_04"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp" />
+    </LinearLayout>
+</ScrollView>

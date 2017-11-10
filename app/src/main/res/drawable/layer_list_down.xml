@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:gravity="fill">
+        <bitmap android:src="@drawable/bg"></bitmap>
+    </item>
+    <item android:gravity="center">
+        <bitmap android:src="@drawable/sym_def_app_icon" />
+    </item>
+</layer-list>
