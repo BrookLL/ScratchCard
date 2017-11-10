@@ -38,6 +38,8 @@ public class ScratchCardView extends View {
     private Bitmap canvasBitmap;
     private Canvas scratchCanvas;
     private RectF rectF;
+    private int completeWithPercentage = 70;
+    private int pointWidth = 50;
 
     private LayerData upLayer;
     private LayerData downLayer;
@@ -67,7 +69,7 @@ public class ScratchCardView extends View {
         pathPaint.setStyle(Paint.Style.STROKE);
         pathPaint.setStrokeJoin(Paint.Join.ROUND); // 圆角
         pathPaint.setStrokeCap(Paint.Cap.ROUND); // 圆角
-        pathPaint.setStrokeWidth(50);
+        pathPaint.setStrokeWidth(pointWidth);
         pathPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         //初始化path
         path = new Path();
@@ -174,7 +176,6 @@ public class ScratchCardView extends View {
             drawDownLayer(canvas);
             if (!isComplete) {
                 canvas.drawBitmap(canvasBitmap, null, rectF, null);
-                drawPath();
             }
         }
     }
@@ -305,8 +306,21 @@ public class ScratchCardView extends View {
                 break;
 
         }
+        drawPath();
         invalidate();
         return true;
+    }
+
+    public void setOnCompleteListener(OnCompleteListener onCompleteListener) {
+        this.onCompleteListener = onCompleteListener;
+    }
+
+    public void setCompleteWithPercentage(int completeWithPercentage) {
+        this.completeWithPercentage = completeWithPercentage;
+    }
+
+    public void setPointWidth(int pointWidth) {
+        this.pointWidth = pointWidth;
     }
 
     private void computeScratchArea() {
@@ -317,9 +331,6 @@ public class ScratchCardView extends View {
         }
     }
 
-    public void setOnCompleteListener(OnCompleteListener onCompleteListener) {
-        this.onCompleteListener = onCompleteListener;
-    }
 
     //在子线程计算
     private Runnable runnable = new Runnable() {
@@ -351,7 +362,7 @@ public class ScratchCardView extends View {
                 int percent = (int) (wipeArea * 100 / totalArea);
                 Log.e("TAG", percent + "");
 
-                if (percent > 70 && !isComplete) {
+                if (percent >= completeWithPercentage && !isComplete) {
                     isComplete = true;
                     postInvalidate();
                     Log.d(TAG, "........." + isComplete);
