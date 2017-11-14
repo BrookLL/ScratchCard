@@ -22,7 +22,7 @@ import java.util.concurrent.Executors;
 
 /**
  * Author liujian
- * Email: riverlet.liu@mopo.com
+ * Email: riverlet.liu@qq.com
  * Date: 2017/11/3.
  * Despribe: 整个View的绘制分为两层，下层是谜底（downLayer），上册是可以刮开的部分（canvasBitmap = upLayer+path）
  */
